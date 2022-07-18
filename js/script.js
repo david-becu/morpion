@@ -18,7 +18,7 @@ const gg = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [6, 4, 2],
+  [2, 4, 6],
 ];
 
 // Initialisation des cases
@@ -28,7 +28,6 @@ choice.forEach((caseSelection) => {
 });
 
 // >>>>>>>>>>>>>>> Déclarations fonctionnelles
-
 // Déterminer le joueur actif
 function activePlayer() {
   return count % 2 != 0 ? playerOne : playerTwo;
@@ -36,7 +35,14 @@ function activePlayer() {
 
 // Déterminer si les conditions de victoire sont réunies
 function winner() {
-  // code à ajouter...
+  // Déterminer si le symbole pour le joueur actuel
+  // correspond à l'une des séries indicées du tableau «gg»
+  tempPlayer = [];
+  choice.forEach((caseWinner) => {
+    if ((caseWinner.textContent = activePlayer())) {
+      tempPlayer.push(caseWinner.getAttribute("case"));
+    }
+  });
 }
 
 // <<<<<<<<<<<<<< Fin déclarations fonctionnelles
@@ -45,12 +51,14 @@ function winner() {
 // Fin de section déclarative et initalisations
 // ============================================
 
+// ============================================
+// Section principale du programme
+// ============================================
+
 // Détermine la case choisie par les événements
 choice.forEach((caseSelection) =>
   caseSelection.addEventListener("click", () => {
     count++;
-    //Récupérer le numéro de la case cliquée
-    let numCase = caseSelection.getAttribute("case");
     // Vérifier si la case est vide :
     // Si la case est vide ajouter le symbole du joueur
     if (caseSelection.textContent == "") {
@@ -62,3 +70,6 @@ choice.forEach((caseSelection) =>
     }
   })
 );
+// ============================================
+// Fin de la section principale du programme
+// ============================================
