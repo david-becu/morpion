@@ -41,6 +41,7 @@ function winner() {
   choice.forEach((caseWinner) => {
     if ((caseWinner.textContent = activePlayer())) {
       tempPlayer.push(caseWinner.getAttribute("case"));
+      console.log(tempPlayer);
     }
   });
 }
@@ -58,7 +59,6 @@ function winner() {
 // Détermine la case choisie par les événements
 choice.forEach((caseSelection) =>
   caseSelection.addEventListener("click", () => {
-    count++;
     // Vérifier si la case est vide :
     // Si la case est vide ajouter le symbole du joueur
     if (caseSelection.textContent == "") {
@@ -68,6 +68,7 @@ choice.forEach((caseSelection) =>
     if (count >= 3) {
       winner();
     }
+    count++;
   })
 );
 // ============================================

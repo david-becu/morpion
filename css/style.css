@@ -1,0 +1,33 @@
+.background-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.box-shadow {
+  box-shadow: 40px 40px 40px 40px;
+}
+
+.blocktext {
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+
+.case:hover {
+  background-color: greenyellow;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.opacity {
+  opacity: 98%;
+}
+
+body {
+  float: center;
+  background-position: right;
+  text-align: center;
+  margin-left: -20px;
+}
