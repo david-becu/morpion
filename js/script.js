@@ -5,6 +5,7 @@
 const choice = document.querySelectorAll(".case");
 const turn = document.querySelector(".tour");
 const wonBy = document.querySelector(".wonBy");
+const reset = document.querySelector(".btn-warning");
 
 // compteur de tour
 let count = 0;
@@ -27,14 +28,14 @@ const gg = [
 ];
 
 // Initialisation des cases
-//function initialize() {
-choice.forEach((caseSelection) => {
-  caseSelection.textContent = "";
-});
-turn.textContent = "";
-wonBy.textContent = "";
-//}
-//initialize();
+function initialize() {
+  choice.forEach((caseSelection) => {
+    caseSelection.textContent = "";
+  });
+  turn.textContent = "";
+  wonBy.textContent = "";
+}
+initialize();
 
 // >>>>>>>>>>>>>>> Déclarations fonctionnelles
 // Déterminer le joueur actif
@@ -66,8 +67,11 @@ function winner() {
             wonBy.innerText = `Le joueur ${activePlayer} a gagné`;
             console.log(`Le joueur ${activePlayer} a gagné`);
             console.log(activePlayer + " = " + tempPlayer);
-            break;
           }
+
+          reset.addEventListener("click", () => {
+            initialize();
+          });
         }
       }
     }
